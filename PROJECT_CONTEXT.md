@@ -4,7 +4,7 @@ A complete rundown of this project from start to its current state, written so a
 teammate (or their AI assistant) can pick up any part of the remaining work without
 re-deriving anything. Every number here comes from an executed notebook in this repo.
 
-Last updated: October 18, 2026.
+Last updated: October 18, 2026 (presentation materials added).
 
 ---
 
@@ -315,18 +315,18 @@ lending rules.
   non-specialist; slides can be more technical).
 - **No em dashes** in written deliverables.
 
-## 11. Proposed presentation skeleton (DRAFT, not yet agreed with the team)
+## 11. Presentation (agreed structure, in progress)
 
-About 10 slides for 10 minutes:
+Four presenters, ten slides, ten minutes. Everything needed to build the deck is in
+`presentation/`:
 
-1. Title and team (0:15)
-2. Problem and data: 307,511 applicants, 8.07% default, metric choice (0:45)
-3. Data prep highlights: sentinel fix, measured pruning, no-bureau-file finding,
-   `EXT_SOURCE_MEAN`, Pearson vs IV (1:30)
-4. Splits: three strategies, adversarial 0.905, shift table (1:00)
-5. Network and tuning: architecture, the plateau (1:00)
-6. Error analysis design and findings: eyeball/blackbox, category table, 54% (1:30)
-7. Iteration 2: repayment history, evidence, +0.0077 with interval, ablation (0:45)
-8. Fairness: proxies, gender fixed, age and region fail, race untestable (1:30)
-9. Final test results and split comparison, realistic 0.766 (1:00)
-10. Conclusions, limitations, next steps (0:45)
+- `presentation/slide_content.md`: bullets for every slide, timings, speaker notes, and
+  the presenter split (1: slides 1-3, 2: slides 4-5, 3: slides 6-7, 4: slides 8-10)
+- `presentation/figures/`: 12 PNG charts named by slide (e.g.
+  `slide08a_approval_ratio_four_fifths.png`)
+- `presentation/make_figures.py`: regenerates every figure. Data-derived charts read the
+  raw CSVs and processed parquet; model results are copied from the executed notebook
+  with the source cell noted
+
+Chart style: light surface, blue `#2a78d6` and orange `#eb6834` (validated for
+colorblind safety), gray for de-emphasis, claim-style titles.
