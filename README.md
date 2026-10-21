@@ -33,8 +33,8 @@ loan), which we refer to as default for short. 8.07% of applicants have it.
 
 | File | What it is |
 |---|---|
-| `Owen_EDA.ipynb` | Exploratory data analysis and data preparation (Phases 1 to 8): cleaning, removing redundant columns, missing values, feature engineering, feature ranking, fairness baselines, and the preprocessing pipeline. |
-| `Owen_Model_Run.ipynb` | **The complete pipeline.** It repeats the EDA, then covers the three train/validation/test splits, the PyTorch network and tuning, error analysis, the second iteration, the fairness audit, and the final test-set evaluation (Phases 1 to 15). |
+| `Owen_EDA.ipynb` | Exploratory data analysis and data preparation on their own (Phases 1 to 8). A lighter read for anyone interested only in the data work; everything in it is also included in `Owen_Model_Run.ipynb`. |
+| `Owen_Model_Run.ipynb` | **The complete pipeline, and the notebook to run.** Phases 1 to 8 are the same EDA, followed by the three splits, the PyTorch network and tuning, error analysis, the second iteration, the fairness audit, and the final test-set evaluation (Phases 9 to 15). |
 | `mortgage_error_analysis_100.csv` | Error analysis spreadsheet: 111 manually reviewed errors, plus one summary row per model iteration recording what changed and whether it helped. |
 
 Each notebook explains its decisions in markdown cells alongside the code.
@@ -77,9 +77,8 @@ NVIDIA GPU, whichever is available.
 
 ### 3. Run the notebooks
 
-- `Owen_Model_Run.ipynb` is self contained and reproduces every result. A full run takes
-  about 10 to 15 minutes.
-- `Owen_EDA.ipynb` can be run on its own to explore the data preparation in more detail.
+- `Owen_Model_Run.ipynb` reproduces every result on its own. A full run takes about 10 to 15 minutes.
+- `Owen_EDA.ipynb` is optional: its contents are the first 8 phases of the model notebook.
 
 Run the cells from top to bottom. Random seeds are fixed (42), so the results match the
 saved outputs.
